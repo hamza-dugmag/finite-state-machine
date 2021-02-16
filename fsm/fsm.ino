@@ -19,8 +19,8 @@ void setup()  // int main()
 
     // initialize
     digitalWrite(redPin, LOW);
-    digitalWrite(yellowPin, HIGH);
-    digitalWrite(buttonPin, HIGH);
+    digitalWrite(yellowPin, LOW);
+    digitalWrite(greenPin, LOW);
     data.prev = 1;
     data.cur = 1;
 }
