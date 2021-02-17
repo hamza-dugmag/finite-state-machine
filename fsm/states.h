@@ -5,8 +5,8 @@
 // 2021-02-16
 // https://stackoverflow.com/questions/133214/is-there-a-typical-state-machine-implementation-pattern
 
-#ifndef FUNCTIONS_H
-#define FUNCTIONS_H
+#ifndef STATES_H
+#define STATES_H
 
 // pins
 #define redPin 6
