@@ -16,9 +16,9 @@ state_t run_state(state_t cur_state, instance_data_t *data)
 
 state_t do_state_green(instance_data_t *data)
 {
-    digitalWrite(redPin, LOW);
-    digitalWrite(yellowPin, LOW);
-    digitalWrite(greenPin, HIGH);
+    digitalWrite(red_pin, LOW);
+    digitalWrite(yellow_pin, LOW);
+    digitalWrite(green_pin, HIGH);
     if (data->prev == 1 && data->cur == 0)
     {
         return STATE_YELLOW;
@@ -28,9 +28,9 @@ state_t do_state_green(instance_data_t *data)
 
 state_t do_state_yellow(instance_data_t *data)
 {
-    digitalWrite(redPin, LOW);
-    digitalWrite(yellowPin, HIGH);
-    digitalWrite(greenPin, LOW);
+    digitalWrite(red_pin, LOW);
+    digitalWrite(yellow_pin, HIGH);
+    digitalWrite(green_pin, LOW);
     if (data->prev == 1 && data->cur == 0)
     {
         return STATE_RED;
@@ -40,9 +40,9 @@ state_t do_state_yellow(instance_data_t *data)
 
 state_t do_state_red(instance_data_t *data)
 {
-    digitalWrite(redPin, HIGH);
-    digitalWrite(yellowPin, LOW);
-    digitalWrite(greenPin, LOW);
+    digitalWrite(red_pin, HIGH);
+    digitalWrite(yellow_pin, LOW);
+    digitalWrite(green_pin, LOW);
     if (data->prev == 1 && data->cur == 0)
     {
         return STATE_GREEN;

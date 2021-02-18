@@ -9,10 +9,10 @@
 #define STATES_H
 
 // pins
-#define redPin 6
-#define yellowPin 4
-#define greenPin 2
-#define buttonPin 23
+#define red_pin 6
+#define yellow_pin 4
+#define green_pin 2
+#define button_pin 23
 
 // states and data
 typedef enum { STATE_GREEN, STATE_YELLOW, STATE_RED, NUM_STATES } state_t;

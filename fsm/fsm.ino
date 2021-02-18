@@ -12,15 +12,15 @@ instance_data_t data;
 void setup()  // int main()
 {
     // pinmodes
-    pinMode(redPin, OUTPUT);
-    pinMode(yellowPin, OUTPUT);
-    pinMode(greenPin, OUTPUT);
-    pinMode(buttonPin, INPUT_PULLUP);
+    pinMode(red_pin, OUTPUT);
+    pinMode(yellow_pin, OUTPUT);
+    pinMode(green_pin, OUTPUT);
+    pinMode(button_pin, INPUT_PULLUP);
 
     // initialize
-    digitalWrite(redPin, LOW);
-    digitalWrite(yellowPin, LOW);
-    digitalWrite(greenPin, LOW);
+    digitalWrite(red_pin, LOW);
+    digitalWrite(yellow_pin, LOW);
+    digitalWrite(green_pin, LOW);
     data.prev = 1;
     data.cur = 1;
 }
@@ -29,7 +29,7 @@ void loop()  // while (true)
 {
     // update data
     data.prev = data.cur;
-    data.cur = digitalRead(buttonPin);
+    data.cur = digitalRead(button_pin);
     
     // run state
     cur_state = run_state(cur_state, &data);
