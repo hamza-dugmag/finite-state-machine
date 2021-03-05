@@ -33,4 +33,6 @@ state_func_t* const state_table[NUM_STATES] = {
 };
 state_t run_state(state_t cur_state, instance_data_t *data);
 
+// TODO: state aborts
+
 #endif
