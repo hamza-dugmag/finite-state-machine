@@ -31,6 +31,7 @@ state_t do_state_red(instance_data_t *data);
 
 state_t do_state_ABORT(instance_data_t *data);
 state_t do_state_COMMS(instance_data_t *data);
+int check_safety(instance_data_t *data);
 
 // state manager
 state_func_t* const state_table[NUM_STATES] = {

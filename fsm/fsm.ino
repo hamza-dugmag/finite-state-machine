@@ -11,6 +11,8 @@ instance_data_t data;
 
 void setup()  // int main()
 {
+    Serial.begin(9600);
+
     // pinmodes
     pinMode(red_pin, OUTPUT);
     pinMode(yellow_pin, OUTPUT);
