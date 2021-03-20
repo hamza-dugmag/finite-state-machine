@@ -8,10 +8,12 @@
 #ifndef STATES_H
 #define STATES_H
 
-// pins
+// output
 #define red_pin 6
 #define yellow_pin 4
 #define green_pin 2
+
+// input
 #define button_pin 23
 
 // states and data

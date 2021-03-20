@@ -47,7 +47,7 @@ state_t do_state_ABORT(instance_data_t *data)
 state_t do_state_COMMS(instance_data_t *data)
 {
     Serial.println("Reporting back to ground...");
-    // do whatever you want here (can even re-check safety in case you want to get back up)
+    // do whatever you want here (can even re-check safety in case you want to get back up and runnning)
     return STATE_COMMS;
 }
 
