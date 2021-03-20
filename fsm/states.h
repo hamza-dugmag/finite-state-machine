@@ -16,13 +16,14 @@
 
 // states and data
 typedef enum { STATE_INIT, STATE_GREEN, STATE_YELLOW, STATE_RED, STATE_ABORT, STATE_COMMS, NUM_STATES } state_t;
-typedef struct instance_data {
+typedef struct instance_data {  // Date Package
     int prev;
     int cur;
 } instance_data_t;
 typedef state_t state_func_t(instance_data_t *data);
 
 // state functions
+int check_safety(instance_data_t *data);
 state_t do_state_INIT(instance_data_t *data);
 
 state_t do_state_green(instance_data_t *data);
@@ -31,7 +32,6 @@ state_t do_state_red(instance_data_t *data);
 
 state_t do_state_ABORT(instance_data_t *data);
 state_t do_state_COMMS(instance_data_t *data);
-int check_safety(instance_data_t *data);
 
 // state manager
 state_func_t* const state_table[NUM_STATES] = {
