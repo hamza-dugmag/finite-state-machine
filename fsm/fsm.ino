@@ -6,7 +6,7 @@
 
 #include "states.h"
 
-state_t cur_state = STATE_GREEN;
+state_t cur_state = STATE_INIT;
 instance_data_t data;
 
 void setup()  // int main()
