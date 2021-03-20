@@ -11,8 +11,8 @@
 
 state_t run_state(state_t cur_state, instance_data_t *data)
 {
-    // abort if unsafe
-    if (cur_state != STATE_ABORT)
+    // abort if unsafe and not already aborted
+    if ((cur_state != STATE_ABORT) && (cur_state != STATE_COMMS))
         if (check_safety(data) == 1)
             return state_table[STATE_ABORT](data);
 
@@ -36,6 +36,9 @@ state_t do_state_INIT(instance_data_t *data)
 state_t do_state_ABORT(instance_data_t *data)
 {
     Serial.println("Aborting...");
+    digitalWrite(red_pin, HIGH);
+    digitalWrite(yellow_pin, HIGH);
+    digitalWrite(green_pin, HIGH);
     return STATE_COMMS;
 }
 
@@ -79,7 +82,7 @@ state_t do_state_red(instance_data_t *data)
     digitalWrite(green_pin, LOW);
     if (data->prev == 1 && data->cur == 0)
     {
-        return STATE_GREEN;
+        return STATE_ABORT;
     }
     return STATE_RED;
 }
