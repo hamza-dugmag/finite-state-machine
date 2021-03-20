@@ -9,12 +9,14 @@
 #include "states.h"
 #include "Arduino.h"
 
+
+// STATE MACHINE
 state_t run_state(state_t cur_state, instance_data_t *data)
 {
     // abort if unsafe and not already aborted
     if ((cur_state != STATE_ABORT) && (cur_state != STATE_COMMS))
         if (check_safety(data) == 1)
-            return state_table[STATE_ABORT](data);
+            cur_state = STATE_ABORT;
 
     return state_table[cur_state](data);
 }
@@ -26,7 +28,7 @@ int check_safety(instance_data_t *data)
 }
 
 
-// FORMALIZED STATES
+// UNIQUE STATES
 state_t do_state_INIT(instance_data_t *data)
 {
     Serial.println("Initializing system...");
@@ -50,7 +52,7 @@ state_t do_state_COMMS(instance_data_t *data)
 }
 
 
-// MAIN STATES
+// BODY STATES
 state_t do_state_green(instance_data_t *data)
 {
     digitalWrite(red_pin, LOW);
