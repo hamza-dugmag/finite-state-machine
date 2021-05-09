@@ -63,5 +63,7 @@ If `(1)` contains `n` states, then there must be `n` state functions in `(3)` an
 
 Implement the safety check all the state functions in `states.cpp`. Functions must return a state in the `state_t` enum.
 
+Upload `fsm.ino` to the Arduino-based microcontroller.
+
 ## Contact
 Please contact @Hamza on the UTAT Rocketry Slack for any help, questions, etc.
